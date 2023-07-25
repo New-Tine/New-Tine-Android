@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="홈" />
+
+    <item
+        android:id="@+id/menu_new_tech"
+        android:icon="@drawable/new_coin"
+        android:title="뉴테크" />
+
+    <item
+        android:icon="@drawable/search"
+        android:id="@+id/menu_scrap"
+        android:title="스크랩" />
+
+    <item
+        android:icon="@drawable/person"
+        android:id="@+id/menu_mypage"
+        android:title="마이페이지"
+
+        />
+
+</menu>

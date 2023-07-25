@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10sp"
+    >
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:button="@android:color/transparent"
+        android:backgroundTint="@color/bottom_nav"
+        android:background="@drawable/habbit_making_checkbox"
+
+        >
+
+    </CheckBox>
+
+
+    <TextView
+
+        android:id="@+id/goal"
+        android:text="하루 기사 갯수 설정"
+        android:textColor="@color/black"
+
+        android:paddingLeft="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+
+</LinearLayout>

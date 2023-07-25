@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HomeFragment"
+    android:weightSum="7"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/search_nav"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:paddingTop="20sp"
+
+        >
+
+        <ImageView
+            android:src="@drawable/arrow_back_40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+        </ImageView>
+
+        <Button
+            android:id="@+id/search_btn"
+            android:hint="Search news"
+            android:background="#E5E7EB"
+            android:layout_width="300sp"
+            android:layout_marginRight="10sp"
+            android:layout_height="40sp"
+            android:shadowRadius="@integer/material_motion_duration_medium_1"
+
+            >
+
+        </Button>
+
+        <TextView
+            android:text="취소"
+            android:textSize="18sp"
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+
+        </TextView>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/fragment_container"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="6"
+        android:paddingLeft="10sp"
+        android:paddingRight="10sp"
+
+        >
+
+        <LinearLayout
+            android:id="@+id/sec1_2"
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:orientation="vertical"
+            android:layout_weight="0.5"
+            >
+            <LinearLayout
+                android:id="@+id/sec1_2_1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                >
+
+                <TextView
+                    android:paddingTop="3sp"
+                    android:text="최근 검색어"
+                    android:textSize="15sp"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+                <View
+                    android:layout_width="280sp"
+                    android:layout_height="0sp">
+
+                </View>
+
+                <ImageView
+                    android:id="@+id/trash_can"
+                    android:src="@drawable/trash_can"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+
+                </ImageView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sec1_2_2"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:paddingLeft="20sp"
+                >
+
+                <TextView
+                    android:background="@drawable/radius"
+                    android:text="IT"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10sp"
+                    >
+
+                </TextView>
+
+                <TextView
+                    android:background="@drawable/radius"
+                    android:text="주식 현황"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10sp"
+                    >
+
+                </TextView>
+
+                <TextView
+                    android:background="@drawable/radius"
+                    android:text="미술관 경매"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10sp"
+                    >
+
+                </TextView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:background="@color/light_grey"
+            android:layout_width="match_parent"
+            android:layout_height="1sp"
+            >
+
+        </View>
+
+        <LinearLayout
+            android:id="@+id/sec2"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            android:layout_weight="1"
+            android:paddingLeft="10sp"
+            android:paddingRight="10sp"
+            android:paddingTop="10sp"
+            >
+            <TextView
+                android:text="추천 뉴스"
+                android:textSize="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <LinearLayout
+                android:paddingTop="5sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10sp"
+                android:paddingRight="5sp"
+                android:weightSum="4"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:id="@+id/news"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10sp"
+                    >
+
+                    <TextView
+                        android:id="@+id/news_head"
+                        android:text="기사 제목1"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        >
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/news_publish"
+                        android:text="신문사1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/news2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10sp"
+                    >
+
+                    <TextView
+                        android:id="@+id/news_head2"
+                        android:text="기사 제목2"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        >
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/news_publish2"
+                        android:text="신문사2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10sp"
+                    >
+
+                    <TextView
+                        android:text="기사 제목2"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        >
+
+                    </TextView>
+
+                    <TextView
+                        android:text="신문사2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10sp"
+                    >
+
+                    <TextView
+                        android:text="기사 제목2"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        >
+
+                    </TextView>
+
+                    <TextView
+                        android:text="신문사2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+            <View
+                android:background="@color/light_grey"
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                >
+
+            </View>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sec3"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="10sp"
+            android:layout_weight="1"
+            android:paddingLeft="10sp"
+            android:paddingRight="10sp"
+            android:paddingTop="5sp"
+            >
+
+            <TextView
+                android:text="실시간 인기 뉴스"
+                android:textSize="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/top_news"
+                android:paddingTop="5sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10sp"
+                android:paddingRight="15sp"
+                android:weightSum="3"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
+
+                <LinearLayout
+                    android:id="@+id/first_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    >
+
+                    <TextView
+                        android:id="@+id/first"
+                        android:text="1"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10sp"
+                        >
+
+                    </TextView>
+
+                    <TextView
+                        android:textColor="@color/black"
+                        android:text="뉴스 제목"
+                        android:textSize="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/second_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    >
+
+                    <TextView
+                        android:id="@+id/second"
+                        android:text="2"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10sp"
+                        >
+
+                    </TextView>
+
+                    <TextView
+                        android:textColor="@color/black"
+                        android:text="뉴스 제목"
+                        android:textSize="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/third_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    >
+
+                    <TextView
+                        android:id="@+id/third"
+                        android:text="3"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10sp"
+                        >
+
+                    </TextView>
+
+                    <TextView
+                        android:textColor="@color/black"
+                        android:text="뉴스 제목"
+                        android:textSize="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:background="@color/light_grey"
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                >
+
+            </View>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/sec4"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_weight="1"
+            android:paddingLeft="10sp"
+            android:paddingRight="10sp"
+            android:paddingBottom="10sp"
+
+            >
+
+            <TextView
+                android:text="최근 본 뉴스"
+                android:textSize="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="4"
+                android:orientation="horizontal"
+                >
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/square"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp">
+
+                    </ImageView>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="YTN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        </TextView>
+
+                        <TextView
+                            android:text="7월 17일 22:00"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+
+                        </TextView>
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/square"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp">
+
+                    </ImageView>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="YTN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        </TextView>
+
+                        <TextView
+                            android:text="7월 17일 22:00"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+
+                        </TextView>
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/square"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp">
+
+                    </ImageView>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="YTN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        </TextView>
+
+                        <TextView
+                            android:text="7월 17일 22:00"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+
+                        </TextView>
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/square"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp">
+
+                    </ImageView>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="YTN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        </TextView>
+
+                        <TextView
+                            android:text="7월 17일 22:00"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+
+                        </TextView>
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
