@@ -3,7 +3,7 @@ package com.example.new_tine
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.new_tine.databinding.RvItemSearchHistoryBinding
+import com.example.newtine.databinding.RvItemSearchHistoryBinding
 
 class rv_adapter_search_histroy(val historyList:ArrayList<article>):RecyclerView.Adapter<rv_adapter_search_histroy.Holder>() {
     private lateinit var binding: RvItemSearchHistoryBinding

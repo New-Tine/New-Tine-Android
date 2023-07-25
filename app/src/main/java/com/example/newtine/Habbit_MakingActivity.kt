@@ -3,7 +3,7 @@ package com.example.new_tine
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TimePicker
-import com.example.new_tine.databinding.ActivityHabbitMakingBinding
+import com.example.newtine.databinding.ActivityHabbitMakingBinding
 
 class Habbit_MakingActivity : AppCompatActivity() {
     private val binding by lazy {
