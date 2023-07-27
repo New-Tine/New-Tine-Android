@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.new_tine.databinding.FragmentHomeSearch2Binding
+import com.example.newtine.databinding.FragmentHomeSearch2Binding
 import java.time.LocalDate
 
 class home_search2 : Fragment() {

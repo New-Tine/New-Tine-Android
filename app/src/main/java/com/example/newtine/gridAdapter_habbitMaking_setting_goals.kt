@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
+import com.example.newtine.R
 
 class gridAdapter_habbitMaking_setting_goals(private val context: Context, private val data:Array<String>):BaseAdapter() {
     override fun getCount(): Int {
