@@ -1,4 +1,4 @@
-package com.example.new_tine
+package com.example.newtine
 
 import java.time.LocalDate
 import java.util.Date

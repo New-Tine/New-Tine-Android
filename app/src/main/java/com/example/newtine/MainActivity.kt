@@ -1,134 +1,93 @@
 package com.example.newtine
 
-import androidx.appcompat.app.AppCompatActivity
+import MainNews_Fragment
+
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.newtine.databinding.ActivityMainBinding
-import com.tickaroo.tikxml.TikXml
-import com.tickaroo.tikxml.retrofit.TikXmlConverterFactory
-import org.jsoup.Jsoup
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
+import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.ComponentActivity
+import androidx.appcompat.app.AppCompatActivity
+import com.example.new_tine.NewTechFragment
+import com.example.newtine.R
+import com.example.newtine.databinding.MainActivityBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var newsAdapter: NewsAdapter
 
-    private val retrofit = Retrofit.Builder()
-        .baseUrl("https://news.google.com/")
-        .addConverterFactory(
-            TikXmlConverterFactory.create(
-                TikXml.Builder()
-                    .exceptionOnUnreadXml(false)
-                    .build()
-            )
-        ).build()
+    private lateinit var binding: MainActivityBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding=MainActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        newsAdapter = NewsAdapter()
-
-        val newsService = retrofit.create(NewsService::class.java)
-
-        binding.newRecyclerView.apply {
-            layoutManager = LinearLayoutManager(context)
-            adapter = newsAdapter
+        binding.btnHabbitMaking.setOnClickListener {
+            val intent=Intent(this, Habbit_MakingActivity::class.java)
+            startActivity(intent)
         }
 
-        binding.ItChip.setOnClickListener{
-            binding.chipGroup.clearCheck()//다른 칩 체크 해제시킴
-            binding.ItChip.isChecked = true
+        supportFragmentManager
+            .beginTransaction()
+            .replace(binding.fragmentContainer.id, MainNews_Fragment())
+            .commitAllowingStateLoss()
 
-            //todo api 호출, 리스트를 변경
-            newsService.itNews().submitList()
-        }
-        binding.politicsChip.setOnClickListener{
-            binding.chipGroup.clearCheck()//다른 칩 체크 해제시킴
-            binding.politicsChip.isChecked = true
+        Toast.makeText(this,"why",Toast.LENGTH_SHORT).show()
 
-            //todo api 호출, 리스트를 변경
-            newsService.politicsNews().submitList()
-        }
-        binding.economicChip.setOnClickListener{
-            binding.chipGroup.clearCheck()//다른 칩 체크 해제시킴
-            binding.economicChip.isChecked = true
 
-            //todo api 호출, 리스트를 변경
-            newsService.economicNews().submitList()
-        }
-        binding.industryChip.setOnClickListener{
-            binding.chipGroup.clearCheck()//다른 칩 체크 해제시킴
-            binding.industryChip.isChecked = true
+        binding.bottomNav.run {
+            setOnItemReselectedListener {
+                when(it.itemId){
+                    R.id.menu_home->{
+                        supportFragmentManager
+                            .beginTransaction()
+                            .replace(binding.fragmentContainer.id,MainNews_Fragment())
+                            .commitAllowingStateLoss()
 
-            //todo api 호출, 리스트를 변경
-            newsService.industryNews().submitList()
-        }
-        binding.socialChip.setOnClickListener{
-            binding.chipGroup.clearCheck()//다른 칩 체크 해제시킴
-            binding.socialChip.isChecked = true
+                        Toast.makeText(context,"home fragment",Toast.LENGTH_SHORT).show()
 
-            //todo api 호출, 리스트를 변경
-            newsService.socialNews().submitList()
-        }
-        binding.cultureChip.setOnClickListener{
-            binding.chipGroup.clearCheck()//다른 칩 체크 해제시킴
-            binding.cultureChip.isChecked = true
+                    }
 
-            //todo api 호출, 리스트를 변경
-            newsService.cultureNews().submitList()
-        }
-        binding.sportsChip.setOnClickListener{
-            binding.chipGroup.clearCheck()//다른 칩 체크 해제시킴
-            binding.sportsChip.isChecked = true
+                    R.id.menu_new_tech->{
+                        supportFragmentManager
+                            .beginTransaction()
+                            .replace(binding.fragmentContainer.id, NewTechFragment())
+                            .commitAllowingStateLoss()
+                        Toast.makeText(context,"new tech fragment",Toast.LENGTH_SHORT).show()
+                    }
 
-            //todo api 호출, 리스트를 변경
-            newsService.sportsNews().submitList()
-        }
+                    R.id.menu_scrap->{
+                        supportFragmentManager
+                            .beginTransaction()
+                            .replace(binding.fragmentContainer.id,HomeFragment())
+                            .commitAllowingStateLoss()
+                        Toast.makeText(context,"new scrap fragment",Toast.LENGTH_SHORT).show()
 
-    }
+                    }
 
-    private fun Call<NewsRss>.submitList() {
-        enqueue(object: Callback<NewsRss> {
-            override fun onResponse(call: Call<NewsRss>, response: Response<NewsRss>) {
-                Log.e("MainActivity","${response.body()?.channel?.items}")
-
-                val list = response.body()?.channel?.items.orEmpty().transform()
-                newsAdapter.submitList(list)
-
-                list.forEachIndexed { index,news ->
-                    //og:image meta에서 가져오기
-                    Thread {
-                        try{
-                            val jsoup = Jsoup.connect(news.link).get()
-                            val elements = jsoup.select("meta[property^=og:]")
-                            val ogImageNode = elements.find { node ->
-                                node.attr("property") == "og:image"
-                            }
-
-                            news.imageUrl = ogImageNode?.attr("content")
-                            Log.e("MainActivity","imageUrl: ${news.imageUrl}")
-
-                        }catch (e: Exception){
-                            e.printStackTrace()
-                        }
-
-                        runOnUiThread {
-                            newsAdapter.notifyItemChanged(index)
-                        }
-                    }.start()
 
                 }
+                true
             }
-            override fun onFailure(call: Call<NewsRss>, t: Throwable) {
-                t.printStackTrace()
-            }
+            selectedItemId=R.id.menu_home
 
-        })
-
+        }
     }
+
+
+
+
+
+    //tab layout, viewpager2
+//        val adapter=viewPager_adapter(this)
+//        binding.viewPager.adapter=adapter
+//
+//        val tabtitleArray= arrayOf(
+//            "HOME","NEW-TECH",
+//        )
+//        TabLayoutMediator(binding.bottomNav,binding.viewPager){
+//            tab,position->tab.text=tabtitleArray[position]
+//        }.attach()
+
+
 }

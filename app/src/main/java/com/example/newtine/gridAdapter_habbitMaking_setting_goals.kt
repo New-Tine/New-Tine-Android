@@ -1,4 +1,4 @@
-package com.example.new_tine
+package com.example.newtine
 
 import android.content.Context
 import android.view.LayoutInflater
