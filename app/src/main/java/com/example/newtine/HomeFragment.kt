@@ -1,4 +1,4 @@
-package com.example.new_tine
+package com.example.newtine
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

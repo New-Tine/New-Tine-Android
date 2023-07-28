@@ -1,4 +1,4 @@
-package com.example.new_tine
+package com.example.newtine
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

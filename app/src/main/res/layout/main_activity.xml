@@ -7,14 +7,15 @@
 
 
     <Button
+        android:textSize="10sp"
         android:id="@+id/btn_habbit_making"
         android:background="@color/blue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="habbit_making"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        >
 
     </Button>
    <FrameLayout
