@@ -13,7 +13,7 @@ import java.time.LocalDate
 
 class home_search2 : Fragment() {
 
-    private var _binding:FragmentHomeSearch2Binding?=null
+    private var _binding: FragmentHomeSearch2Binding?=null
     private val binding get()= _binding!!
     val historyList=ArrayList<article>()
 
