@@ -179,12 +179,13 @@
 
         <Button
             android:text="습관 달성 현황"
+            android:id="@+id/btn_habbit_state"
             android:background="@drawable/blue_radius"
-            android:textColor="@color/blue"
+
+            android:textColor="@color/white"
             android:layout_marginTop="40sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
 
             >
 

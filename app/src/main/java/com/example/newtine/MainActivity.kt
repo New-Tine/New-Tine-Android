@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager
             .beginTransaction()
-            .replace(binding.fragmentContainer.id, MainNews_Fragment())
+            .replace(binding.fragmentContainer.id, NewTechFragment())
             .commitAllowingStateLoss()
 
         Toast.makeText(this,"why",Toast.LENGTH_SHORT).show()
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 true
             }
-            selectedItemId=R.id.menu_home
+            selectedItemId=R.id.menu_new_tech
 
         }
     }
