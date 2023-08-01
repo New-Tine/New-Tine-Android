@@ -18,7 +18,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 
-class MainNews_Fragment : Fragment() {
+class  MainNews_Fragment : Fragment() {
     private lateinit var binding: FragmentMainNewsBinding
     private lateinit var newsAdapter: NewsAdapter
 

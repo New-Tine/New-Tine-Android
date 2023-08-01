@@ -12,7 +12,7 @@
         android:title="뉴테크" />
 
     <item
-        android:icon="@drawable/search"
+        android:icon="@drawable/loupe"
         android:id="@+id/menu_scrap"
         android:title="스크랩" />
 

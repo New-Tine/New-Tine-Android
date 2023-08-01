@@ -32,7 +32,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/newsGroupTitleTextView"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:background="#ff0000"/>
+            tools:background="#ff0000"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/groupNewsPublicationTextView"
@@ -68,7 +69,5 @@
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 </androidx.cardview.widget.CardView>
