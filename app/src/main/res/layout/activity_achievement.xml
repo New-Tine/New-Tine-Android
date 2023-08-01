@@ -12,6 +12,62 @@
     tools:context=".AchievementActivity">
 
     <LinearLayout
+        android:layout_marginTop="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="70sp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nav_newtech"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="10sp">
+
+            <ImageView
+                android:id="@+id/arrow_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrow_back_40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                >
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/title_newtech"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="뉴테크"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toLeftOf="@id/arrow_back"
+                app:layout_constraintRight_toLeftOf="@id/moreBtn"
+                app:layout_constraintTop_toTopOf="parent"
+
+                >
+
+
+            </TextView>
+
+            <ImageView
+                android:id="@+id/moreBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:src="@drawable/more"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/sec1"
         android:orientation="vertical"
         android:layout_marginTop="10sp"
@@ -36,6 +92,7 @@
             </TextView>
 
             <ImageButton
+                android:id="@+id/btn_calendar"
                 android:src="@drawable/calendar"
                 android:background="@color/white"
                 app:layout_constraintTop_toTopOf="parent"
@@ -100,7 +157,9 @@
         <LinearLayout
             android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            >
 
             <ImageView
                 android:src="@drawable/blue_check"
@@ -151,9 +210,11 @@
 
     <Button
         android:text="오늘의 리워드 받기"
+        android:layout_marginTop="30sp"
         android:textColor="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
     </Button>
 

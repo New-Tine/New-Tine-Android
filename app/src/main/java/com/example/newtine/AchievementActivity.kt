@@ -1,13 +1,16 @@
 package com.example.newtine
 
+import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.example.newtine.databinding.ActivityAchievementBinding
 import java.time.DayOfWeek
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.time.format.TextStyle
+import java.util.Calendar
 import java.util.Locale
 
 class AchievementActivity : AppCompatActivity() {
@@ -45,6 +48,11 @@ class AchievementActivity : AppCompatActivity() {
         val gv_adapter_goals=gridAdapter_habbitMaking_setting_goals(this,goals_list)
         gv2.adapter=gv_adapter_goals
 
+        //caldendar
+        binding.btnCalendar.setOnClickListener {
+            showDatePickerDialog()
+        }
+
 
     }
 
@@ -63,6 +71,25 @@ class AchievementActivity : AppCompatActivity() {
             weekMap.put(dateString,dayOfWeek.substring(0,1))
         }
         return weekMap
+    }
+
+    private fun showDatePickerDialog() {
+        val calendar = Calendar.getInstance()
+        val year = calendar.get(Calendar.YEAR)
+        val month = calendar.get(Calendar.MONTH)
+        val day = calendar.get(Calendar.DAY_OF_MONTH)
+
+        val datePickerDialog = DatePickerDialog(
+            this,
+            { _, selectedYear, selectedMonth, selectedDayOfMonth ->
+                val selectedDate = "$selectedYear-${selectedMonth + 1}-$selectedDayOfMonth"
+                Toast.makeText(this, "선택한 날짜: $selectedDate", Toast.LENGTH_SHORT).show()
+            },
+            year,
+            month,
+            day
+        )
+        datePickerDialog.show()
     }
 
 
